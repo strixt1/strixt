@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class X_Marks_The_Spot {
+    public static void main(String[] args) throws Exception {
+        /*
+         * X Marks the spot
+         *
+         * Instructions:
+         * 1 - Create a 2D array (5 width, 7 height)
+         * 2 - Randomly pick a coordinate inside the 2D array to mark as X
+         * 3 - Get the user to guess a coordinate within the 2D array (use the
+         * getUserNumberInput function provided to help)
+         * 4 - If the guessed coordinate is X, exit the app with a "you win"
+         * 5 - If the guessed coordinate is not X, tell the user the guess is incorrect
+         * and repeat steps 3-5
+         *
+         * Recommended: Handle any errors that might occur (examples are but not limited
+         * to: preventing the user from inputting a coordinate outside the 2D array)
+         *
+         * Optional: Prevent the user from guessing the same coordinate twice
+         * Optional: Print out the previous guesses after every incorrect guess (use the
+         * print2DArray function provided to help)
+         */
+    }
+
+String[] cars = ("Volvo", "BMW", "Ford", "Mazda")
+system.out.printIn(cars[0])
+    public static int getUserNumberInput(String prompt) {
+        boolean validInput = false;
+
+        int input = 0;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print(prompt);
+
+        // Loop user input until the input is a valid integer, preventing nullable types
+        while (!validInput) {
+            try {
+                input = Integer.parseInt(keyboard.nextLine());
+
+                if (validInput) {
+                    keyboard.close();
+                    break;
+                } else {
+                    System.out.print("Invalid\n" + prompt + ": ");
+                    continue;
+                }
+            } catch (Exception _e) {
+                System.out.print("Invalid\n" + prompt + ": ");
+                validInput = false;
+                continue;
+            }
+        }
+
+        return input;
+    }
+
+    public static <T> void print2DArray(T[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++)
+                System.out.print(array[i][j] + " ");
+            System.out.println();
+        }
+    }
+}
